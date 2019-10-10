@@ -1,7 +1,7 @@
 /* Author: Priya Ganguly
  * Class ID: 85141
  * Assignment: 2
- * Description: This program performs the add and subtract mathematical functions using integer numbers.
+ * Description: performs the add and subtract mathematical function using integer numbers
  */
 
 package cse360assign2;
@@ -14,14 +14,17 @@ package cse360assign2;
  */
 public class AddingMachine {
 
-	/** This is a global variable: {@link #total} **/
+	/** This is a global variable: {@link #total} */
 	private int total;
+	
+	/** This is a global variable: {@link #history} */
+	private String history;
 	
 	/** Class constructor initializes the total to 0
 	 * @return args Unused.
 	 */
 	public AddingMachine() {
-		total = 0; // not needed - included for clarity
+		total = 0;
 	}
 	
 	/** returns the current total 
@@ -29,21 +32,24 @@ public class AddingMachine {
 	 * @return int This returns the total answer after the operations are applied.
 	 */
 	public int getTotal() {
-		return 0;
+		return total;
 	}
 	
 	/** This method is used to add an integer to the total. 
 	 * @param value This is the parameter for the add method.
 	 */
 	public void add(int value) {
-
+		total = total + value;
+		history = history + " + " + value;
+		
 	}
 	
 	/** This method is used to subtract an integer from the total. 
 	 * @param value This is the parameter for the subtract method.
 	 */
 	public void subtract(int value) {
-
+		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	/** This method returns the entire operation done
@@ -51,12 +57,14 @@ public class AddingMachine {
 	 * @return string This returns a string
 	 */
 	public String toString() {
-		return "";
+		return history;
 	}
 	
 	/** This method resets the calculation history.
 	 * @param args Unused.
 	 */
 	public void clear() {
+		total = 0;
+		history = "0";
 	}
 }
